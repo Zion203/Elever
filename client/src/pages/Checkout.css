@@ -1,0 +1,222 @@
+/* ================================
+   Checkout Page Styles
+   ================================ */
+
+.checkout-page {
+    padding: var(--space-10) 0 var(--space-16);
+}
+
+.checkout-page h1 {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-8);
+}
+
+/* Layout */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--space-10);
+    align-items: start;
+}
+
+/* Form Section */
+.checkout-form-section {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+}
+
+.checkout-form h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+}
+
+.form-row {
+    margin-bottom: var(--space-4);
+}
+
+.form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+/* Payment Section */
+.payment-section {
+    margin: var(--space-8) 0;
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.payment-section h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-4);
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.payment-option.active {
+    border-color: var(--color-primary);
+    background: var(--color-accent);
+}
+
+.payment-option svg {
+    color: var(--color-primary);
+}
+
+/* Place Order Button */
+.place-order-btn {
+    width: 100%;
+    margin-top: var(--space-6);
+}
+
+.place-order-btn .spinner {
+    width: 20px;
+    height: 20px;
+}
+
+/* Order Summary */
+.checkout-summary {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 100px;
+}
+
+.checkout-summary h2 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+/* Summary Items */
+.summary-items {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: var(--space-6);
+}
+
+.summary-item {
+    display: flex;
+    gap: var(--space-4);
+    margin-bottom: var(--space-4);
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+}
+
+.summary-item-image {
+    position: relative;
+    width: 64px;
+    height: 80px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.summary-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-quantity {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 600;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-full);
+}
+
+.summary-item-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.summary-item-details .item-name {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    margin-bottom: var(--space-1);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.summary-item-details .item-price {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    color: var(--color-text);
+}
+
+/* Summary Totals */
+.summary-totals {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+}
+
+.summary-total {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-gray-100);
+}
+
+.summary-total span:last-child {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 640px) {
+    .form-row-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-form-section {
+        padding: var(--space-6);
+    }
+}

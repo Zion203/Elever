@@ -1,0 +1,306 @@
+/* ================================
+   Cart Page Styles
+   ================================ */
+
+.cart-page {
+    padding: var(--space-10) 0 var(--space-16);
+    min-height: 70vh;
+}
+
+/* Empty State */
+.cart-empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-16) var(--space-4);
+    color: var(--color-text-light);
+}
+
+.cart-empty-state svg {
+    margin-bottom: var(--space-6);
+    color: var(--color-gray-300);
+}
+
+.cart-empty-state h2 {
+    margin-bottom: var(--space-2);
+}
+
+.cart-empty-state p {
+    margin-bottom: var(--space-8);
+}
+
+/* Header */
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-8);
+}
+
+.cart-header h1 {
+    font-size: var(--text-3xl);
+}
+
+.clear-cart-btn {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    text-decoration: underline;
+    transition: color var(--transition-base);
+}
+
+.clear-cart-btn:hover {
+    color: var(--color-error);
+}
+
+/* Layout */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--space-10);
+    align-items: start;
+}
+
+/* Items Section */
+.cart-items-section {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.cart-items-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 50px;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-gray-50);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Cart Item Row */
+.cart-item-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 50px;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-6);
+    border-bottom: 1px solid var(--color-gray-100);
+}
+
+.cart-item-row:last-child {
+    border-bottom: none;
+}
+
+.cart-item-product {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+}
+
+.item-image {
+    width: 80px;
+    height: 100px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-name {
+    font-weight: 500;
+    color: var(--color-text);
+    display: block;
+    margin-bottom: var(--space-1);
+}
+
+.item-name:hover {
+    color: var(--color-primary);
+}
+
+.item-category {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    text-transform: capitalize;
+}
+
+.cart-item-price,
+.cart-item-total {
+    font-family: var(--font-heading);
+    font-weight: 500;
+}
+
+.cart-item-total {
+    color: var(--color-primary);
+}
+
+/* Quantity Control */
+.cart-item-quantity .quantity-control {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-sm);
+}
+
+.quantity-control button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    transition: background var(--transition-base);
+}
+
+.quantity-control button:hover:not(:disabled) {
+    background: var(--color-gray-100);
+}
+
+.quantity-control button:disabled {
+    color: var(--color-gray-300);
+}
+
+.quantity-control span {
+    min-width: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Remove Button */
+.cart-item-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--color-gray-400);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+}
+
+.cart-item-remove:hover {
+    background: #FEE2E2;
+    color: var(--color-error);
+}
+
+/* Summary */
+.cart-summary {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 100px;
+}
+
+.cart-summary h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--space-3);
+    font-size: var(--text-sm);
+}
+
+.shipping-note {
+    font-size: var(--text-xs);
+    color: var(--color-primary);
+    background: var(--color-accent);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-4);
+}
+
+.summary-divider {
+    height: 1px;
+    background: var(--color-gray-100);
+    margin: var(--space-4) 0;
+}
+
+.summary-total {
+    font-size: var(--text-lg);
+    font-weight: 600;
+}
+
+.summary-total span:last-child {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+}
+
+.checkout-btn {
+    width: 100%;
+    margin-top: var(--space-6);
+}
+
+.continue-shopping {
+    display: block;
+    text-align: center;
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    text-decoration: underline;
+    margin-top: var(--space-4);
+}
+
+.continue-shopping:hover {
+    color: var(--color-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cart-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-items-header {
+        display: none;
+    }
+
+    .cart-item-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+
+    .cart-item-product {
+        margin-bottom: var(--space-3);
+    }
+
+    .cart-item-price::before {
+        content: 'Price: ';
+        color: var(--color-text-light);
+        font-weight: 400;
+    }
+
+    .cart-item-total::before {
+        content: 'Total: ';
+        color: var(--color-text-light);
+        font-weight: 400;
+    }
+
+    .cart-item-remove {
+        position: absolute;
+        right: var(--space-4);
+        top: var(--space-4);
+    }
+
+    .cart-item-row {
+        position: relative;
+    }
+}
