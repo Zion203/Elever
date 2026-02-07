@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
    * Initiate Google OAuth login
    */
   const login = () => {
-    const apiUrl = import.meta.env.VITE_API_URL;
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://elever.onrender.com';
     window.location.href = `${apiUrl}/auth/google`;
   };
 

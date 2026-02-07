@@ -17,10 +17,12 @@ export const generateToken = (id) => {
  * @param {string} token - JWT token
  */
 export const setTokenCookie = (res, token) => {
+  const isProduction = process.env.NODE_ENV === 'production';
+  
   res.cookie('token', token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
+    secure: isProduction, // Must be true for sameSite: 'none'
+    sameSite: isProduction ? 'none' : 'lax', // 'none' for cross-site, 'lax' for localhost
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
   });
 };
